@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthSense AI | Fake News Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>TruthSense AI</h1>
+            <p>Unmask misinformation with high-precision machine learning.</p>
+        </header>
+
+        <main class="card">
+            <div class="input-group">
+                <label for="newsInput">Article Source / Content</label>
+                <textarea id="newsInput" placeholder="Paste the text of the article you want to verify..."
+                    rows="8"></textarea>
+            </div>
+
+            <button id="predictBtn" onclick="predictNews()">
+                <span class="btn-text">Verifying Now</span>
+                <div class="loader" id="loader"></div>
+            </button>
+
+            <div id="resultContainer" class="result-container hidden">
+                <div id="resultLabel" class="result-badge">FAKE</div>
+                <div class="confidence-bar">
+                    <div class="confidence-fill" id="confidenceFill"></div>
+                </div>
+                <div class="confidence-text">AI Prediction Confidence: <span id="confidenceValue">0</span>%</div>
+                <p id="resultMsg" class="result-msg"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 TruthSense AI • Powered by Passive Aggressive Classifier v1.2</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+dataset/
+train_model.py
+requirements.txt.bak
+.git/
+.gitignore
+Procfile
+README.md
+walkthrough.md
+task.md
+implementation_plan.md
